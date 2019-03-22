@@ -6,6 +6,7 @@ const charFromCode = utf16 => String.fromCodePoint(...utf16.split('-').map(u => 
 
 const _emoji = emojiData.reduce((acc, item) => {
   const { category } = item;
+  console.log('item:',item);
   if (!acc[category]) acc[category] = [];
   acc[category].push({ sortOrder: item.sort_order, char: charFromCode(item.unified) });
   return acc;
