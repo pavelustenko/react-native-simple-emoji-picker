@@ -30,7 +30,8 @@ const EmojiCategory = ({headerStyle, emojiSize, name, items, onPick, showHeader}
 
 const EmojiPicker = ({headerStyle, containerHeight, containerBackgroundColor, emojiSize, onPick, emojiCategories, showHeader}) => (
     <View style={{...styles.picker, height: containerHeight, backgroundColor: containerBackgroundColor}}>
-        <ScrollView horizontal={true}>
+        <ScrollView horizontal={true} keyboardDismissMode="on-drag"
+                    keyboardShouldPersistTaps={'always'}>
             {
                 emoji.map((category, idx) => {
                               return (
